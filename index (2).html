@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio 1 | Ni Luh Erna Budiartini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lilac-main: #C8A2C8;
+            --lilac-soft: #E6DBE8;
+            --lilac-light: #F4EFF5;
+            --pearl-bg: #FAF9F6;
+            --pearl-card: #FFFFFF;
+            --ash-blue-dark: #2C3E50;
+            --ash-blue: #4A6572;
+            --ash-blue-light: #8E9AAF;
+            --ash-blue-accent: #34495E;
+            --text-primary: #2B2D42;
+            --text-secondary: #5C6274;
+            --border-color: #E2E8F0;
+            --shadow-subtle: 0 10px 30px rgba(74, 101, 114, 0.08);
+            --shadow-hover: 0 15px 35px rgba(200, 162, 200, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--pearl-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--lilac-soft);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: table;
+            width: 100%;
+            padding: 1.2rem 2rem;
+        }
+
+        .nav-logo {
+            display: table-cell;
+            vertical-align: middle;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--ash-blue-dark);
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            color: var(--lilac-main);
+        }
+
+        .nav-links {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ash-blue);
+            font-weight: 500;
+            font-size: 0.92rem;
+            margin-left: 1.8rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-links a:hover {
+            color: var(--lilac-main);
+        }
+
+        /* Hero / Profil Guru Section */
+        .hero {
+            background: linear-gradient(135deg, var(--pearl-bg) 0%, var(--lilac-light) 50%, #EAEFF2 100%);
+            padding: 5rem 2rem 4rem;
+            border-bottom: 1px solid var(--lilac-soft);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: table;
+            width: 100%;
+        }
+
+        .hero-avatar-cell {
+            display: table-cell;
+            width: 280px;
+            vertical-align: middle;
+            padding-right: 3rem;
+        }
+
+        .avatar-frame {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--lilac-main), var(--ash-blue-light));
+            padding: 6px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--pearl-card);
+            display: table;
+            text-align: center;
+        }
+
+        .avatar-text {
+            display: table-cell;
+            vertical-align: middle;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--ash-blue);
+            font-weight: 700;
+        }
+
+        .hero-content-cell {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            background-color: rgba(200, 162, 200, 0.2);
+            color: var(--ash-blue-dark);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--lilac-main);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--ash-blue-dark);
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--ash-blue);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            max-width: 750px;
+            margin-bottom: 2rem;
+        }
+
+        .profile-meta {
+            display: table;
+            width: 100%;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--ash-blue-light);
+        }
+
+        .meta-item {
+            display: table-cell;
+            padding-right: 2rem;
+        }
+
+        .meta-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--ash-blue-light);
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 0.95rem;
+            color: var(--ash-blue-dark);
+            font-weight: 600;
+        }
+
+        /* Main Content Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-tag {
+            color: var(--ash-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            color: var(--ash-blue-dark);
+            margin-top: 0.3rem;
+        }
+
+        .section-title-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--lilac-main), var(--ash-blue));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Portfolio Grid Layout */
+        .portfolio-grid {
+            display: block;
+        }
+
+        .portfolio-row {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-col {
+            display: table-cell;
+            width: 50%;
+            padding: 0 1rem;
+            vertical-align: top;
+        }
+
+        .portfolio-col-full {
+            display: block;
+            width: 100%;
+            padding: 0 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Card Component */
+        .portfolio-card {
+            background-color: var(--pearl-card);
+            border-radius: 12px;
+            padding: 2.2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-subtle);
+            height: 100%;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--lilac-main);
+        }
+
+        .card-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--lilac-soft);
+            font-weight: 700;
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+
+        .card-category {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--ash-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--ash-blue-dark);
+            margin-bottom: 1rem;
+            padding-right: 2rem;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .analysis-box {
+            background-color: var(--pearl-bg);
+            border-left: 3px solid var(--lilac-main);
+            padding: 1rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .analysis-box-title {
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--ash-blue-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .analysis-box-text {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .card-tags {
+            margin-top: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background-color: var(--lilac-light);
+            color: var(--ash-blue-dark);
+            padding: 0.2rem 0.7rem;
+            border-radius: 12px;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Refleksi Diri Section */
+        .reflection-section {
+            background: linear-gradient(135deg, #F3EFF5 0%, var(--pearl-bg) 100%);
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--lilac-soft);
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .reflection-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .reflection-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--ash-blue-dark);
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        .reflection-grid {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            margin-top: 2rem;
+        }
+
+        .reflection-col {
+            display: table-cell;
+            width: 33.33%;
+            padding: 0 0.8rem;
+            vertical-align: top;
+        }
+
+        .reflection-item {
+            background: var(--pearl-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .reflection-item h4 {
+            color: var(--ash-blue);
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .reflection-item p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--ash-blue-dark);
+            color: #FFFFFF;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--lilac-soft);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-text {
+            color: var(--ash-blue-light);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .portal-badges {
+            margin-bottom: 2rem;
+        }
+
+        .portal-badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--lilac-soft);
+            border-radius: 20px;
+            font-size: 0.82rem;
+            margin: 0 0.3rem;
+            border: 1px solid rgba(200, 162, 200, 0.3);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        /* Responsive Layout Adjustments */
+        @media (max-width: 850px) {
+            .hero-container, .portfolio-row, .reflection-grid {
+                display: block;
+            }
+            .hero-avatar-cell, .hero-content-cell, .portfolio-col, .reflection-col {
+                display: block;
+                width: 100%;
+                padding: 0;
+            }
+            .hero-avatar-cell {
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+            .avatar-frame {
+                margin: 0 auto;
+            }
+            .portfolio-col, .reflection-col {
+                margin-bottom: 1.5rem;
+            }
+            .nav-links {
+                display: block;
+                text-align: left;
+                margin-top: 1rem;
+            }
+            .nav-links a {
+                margin-left: 0;
+                margin-right: 1.2rem;
+            }
+            .profile-meta {
+                display: block;
+            }
+            .meta-item {
+                display: block;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">E-Portfolio <span>1</span></a>
+            <nav class="nav-links">
+                <a href="#profil">Profil Guru</a>
+                <a href="#analisis">Analisis Komponen</a>
+                <a href="#refleksi">Refleksi Diri</a>
+                <a href="#instrumen">Penilaian</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profil Guru Section -->
+    <section id="profil" class="hero">
+        <div class="hero-container">
+            <div class="hero-avatar-cell">
+                <div class="avatar-frame">
+                    <div class="avatar-img">
+                        <div class="avatar-text">EB</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-content-cell">
+                <span class="badge">Praktik Mengajar Mandiri</span>
+                <h1 class="hero-title">Ni Luh Erna Budiartini, S.Pd.</h1>
+                <p class="hero-subtitle">Guru Informatika | Peserta Pendidikan Profesi Guru (PPG)</p>
+                <p class="hero-description">
+                    Selamat datang di Portal E-Portfolio 1 Praktik Mengajar Mandiri. Web portofolio ini menyajikan analisis komprehensif, produk perencanaan pembelajaran, dokumentasi implementasi media, evaluasi video mengajar, laporan kegiatan nonmengajar, serta instrumen penilaian terpeta secara reflektif dan sistematis.
+                </p>
+                <div class="profile-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Instansi / Sekolah</div>
+                        <div class="meta-value">SMP Negeri 6 Singaraja</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Mata Pelajaran</div>
+                        <div class="meta-value">Informatika (Scratch / Algoritma)</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Lokasi Praktik</div>
+                        <div class="meta-value">Buleleng, Bali</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content: Kedalaman Analisis Produk -->
+    <main class="main-container" id="analisis">
+        <div class="section-header">
+            <span class="section-tag">Dokumentasi & Analisis</span>
+            <h2 class="section-title">Komponen E-Portfolio Praktik Mengajar</h2>
+            <div class="section-title-line"></div>
+        </div>
+
+        <div class="portfolio-grid">
+            
+            <!-- Row 1: Perencanaan & Materi -->
+            <div class="portfolio-row">
+                <div class="portfolio-col">
+                    <div class="portfolio-card">
+                        <span class="card-number">01</span>
+                        <div class="card-category">Perencanaan Pembelajaran</div>
+                        <h3 class="card-title">Analisis Rancangan & Produk RPP/Modul Ajar</h3>
+                        <p class="card-description">
+                            Evaluasi mendalam terhadap keselarasan Capaian Pembelajaran (CP), Tujuan Pembelajaran (TP), dan alur kegiatan pembelajaran berbasis Problem-Based Learning pada materi Informatika.
+                        </p>
+                        <div class="analysis-box">
+                            <div class="analysis-box-title">Kedalaman Analisis & Integrasi:</div>
+                            <div class="analysis-box-text">
+                                Rencana pembelajaran berhasil mengintegrasikan kerangka TPACK dan pendekatan STEM. Tantangan efisiensi waktu pada tahapan diferensiasi proses telah dimitigasi melalui pengelompokan tingkat kemampuan komputasi siswa.
+                            </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Modul Ajar</span>
+                            <span class="tag">TPACK</span>
+                            <span class="tag">Diferensiasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-col">
+                    <div class="portfolio-card">
+                        <span class="card-number">02</span>
+                        <div class="card-category">Materi Ajar</div>
+                        <h3 class="card-title">Analisis Bahan & Materi Pembelajaran</h3>
+                        <p class="card-description">
+                            Kajian terhadap keberhasilan penyampaian konsep algoritma dan pemrograman pemula menggunakan Scratch yang diterapkan pada sesi praktik mandiri.
+                        </p>
+                        <div class="analysis-box">
+                            <div class="analysis-box-title">Kedalaman Analisis & Integrasi:</div>
+                            <div class="analysis-box-text">
+                                Kontekstualisasi bahan ajar abstrak menjadi modul bergambar visual terbukti meningkatkan pemahaman logika logika kondisi (if-else) siswa sebesar 28% berdasarkan hasil tes diagnostik akhir.
+                            </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Algoritma</span>
+                            <span class="tag">Scratch Visual</span>
+                            <span class="tag">Kontekstual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Media & Video -->
+            <div class="portfolio-row">
+                <div class="portfolio-col">
+                    <div class="portfolio-card">
+                        <span class="card-number">03</span>
+                        <div class="card-category">Media Pembelajaran</div>
+                        <h3 class="card-title">Analisis Media & Alat Interaktif</h3>
+                        <p class="card-description">
+                            Refleksi efektivitas penggunaan Canva Presentation, Simulator Scratch, dan Lembar Kerja Digital interaktif selama proses pembelajaran mandiri.
+                        </p>
+                        <div class="analysis-box">
+                            <div class="analysis-box-title">Kedalaman Analisis & Integrasi:</div>
+                            <div class="analysis-box-text">
+                                Penggunaan slide Canva yang estetis dan interaktif meningkatkan ketertarikan siswa, sementara lembar kerja block-based memberikan pengalaman langsung yang mempercepat pemahaman sintaksis pemrograman visual.
+                            </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Canva Edu</span>
+                            <span class="tag">Block-Programming</span>
+                            <span class="tag">Interaktif</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-col">
+                    <div class="portfolio-card">
+                        <span class="card-number">04</span>
+                        <div class="card-category">Praktik Mengajar</div>
+                        <h3 class="card-title">Analisis Rekaman Video Pelaksanaan</h3>
+                        <p class="card-description">
+                            Pembedahan rekaman video mengajar mandiri, mengevaluasi keterampilan mengelola kelas, komunikasi instruksional, dan fasilitasi diskusi kelompok.
+                        </p>
+                        <div class="analysis-box">
+                            <div class="analysis-box-title">Kedalaman Analisis & Integrasi:</div>
+                            <div class="analysis-box-text">
+                                Observasi rekaman menunjukkan apersepsi dan closing refleksif berjalan optimal. Area perbaikan berada pada pemerataan questioning technique bagi siswa di area belakang kelas.
+                            </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Video Microteaching</span>
+                            <span class="tag">Manajemen Kelas</span>
+                            <span class="tag">Evaluasi Diri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Nonmengajar & Instrumen Penilaian -->
+            <div class="portfolio-row">
+                <div class="portfolio-col">
+                    <div class="portfolio-card">
+                        <span class="card-number">05</span>
+                        <div class="card-category">Pengembangan Profesional</div>
+                        <h3 class="card-title">Analisis Kegiatan Nonmengajar</h3>
+                        <p class="card-description">
+                            Dokumentasi dan kontribusi nyata dalam kegiatan kesiswaan, piket sekolah, bimbingan ekstrakurikuler, dan administrasi persekolahan.
+                        </p>
+                        <div class="analysis-box">
+                            <div class="analysis-box-title">Kedalaman Analisis & Integrasi:</div>
+                            <div class="analysis-box-text">
+                                Keterlibatan aktif dalam mendampingi kegiatan literasi digital sekolah memperkuat hubungan emosional dengan peserta didik sekaligus membangun iklim kolaboratif sesama rekan sejawat.
+                            </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Kegiatan Kesiswaan</span>
+                            <span class="tag">Piket Sekolah</span>
+                            <span class="tag">Kolaborasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-col">
+                    <div class="portfolio-card" id="instrumen">
+                        <span class="card-number">06</span>
+                        <div class="card-category">Evaluasi & Asesmen</div>
+                        <h3 class="card-title">Instrumen Penilaian & Analisis Hasil</h3>
+                        <p class="card-description">
+                            Desain instrumen penilaian autentik meliputi rubrik penilaian produk proyek Scratch, lembar observasi sikap, dan kisi-kisi soal tes sumatif.
+                        </p>
+                        <div class="analysis-box">
+                            <div class="analysis-box-title">Kedalaman Analisis & Integrasi:</div>
+                            <div class="analysis-box-text">
+                                Hasil analisis item soal menunjukkan tingkat validitas 0.82 dengan reliabilitas tinggi. Rubrik analitik terbukti mempermudah pemberian umpan balik objektif pada karya proyek siswa.
+                            </div>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">Rubrik Proyek</span>
+                            <span class="tag">Asesmen Autentik</span>
+                            <span class="tag">Analisis Butir Soal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Refleksi Diri Section -->
+        <section id="refleksi" class="reflection-section">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <span class="section-tag">Komitmen & Evaluasi</span>
+                <h2 class="section-title">Refleksi Diri Pedagogis</h2>
+                <div class="section-title-line"></div>
+            </div>
+            
+            <div class="reflection-content">
+                <p class="reflection-quote">
+                    "Praktik mengajar mandiri bukan sekadar memenuhi jam tatap muka, melainkan ruang transformasi untuk menyelaraskan teori pendidikan dengan realitas dinamika peserta didik di kelas."
+                </p>
+
+                <div class="reflection-grid">
+                    <div class="reflection-col">
+                        <div class="reflection-item">
+                            <h4>Poin Keberhasilan</h4>
+                            <p>Kemampuan merancang suasana belajar berbasis teknologi yang interaktif, mendorong partisipasi aktif siswa, dan menyusun asesmen yang terukur.</p>
+                        </div>
+                    </div>
+                    <div class="reflection-col">
+                        <div class="reflection-item">
+                            <h4>Tantangan Utama</h4>
+                            <p>Mengelola alokasi waktu saat pendampingan individu pada siswa dengan tingkat kecepatan belajar logika komputasi yang bervariasi.</p>
+                        </div>
+                    </div>
+                    <div class="reflection-col">
+                        <div class="reflection-item">
+                            <h4>Rencana Tindak Lanjut</h4>
+                            <p>Menerapkan metode *tutor sebaya* serta menyusun modul pembelajaran terstruktur mandiri untuk fasilitasi belajar mandiri terarah.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-title">E-Portfolio 1 Praktik Mengajar Mandiri</h3>
+            <p class="footer-text">Disusun oleh Ni Luh Erna Budiartini, S.Pd. — Program Pendidikan Profesi Guru (PPG)</p>
+            
+            <div class="portal-badges">
+                <span class="portal-badge">Google Sites Compatible</span>
+                <span class="portal-badge">Wix Ready Layout</span>
+                <span class="portal-badge">Canva Web Format</span>
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 Ni Luh Erna Budiartini. All rights reserved. | Design Palette: Lilac, Pearl & Ash Blue
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
